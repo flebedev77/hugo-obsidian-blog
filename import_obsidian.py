@@ -121,5 +121,9 @@ shutil.rmtree(os.path.join("content", images_folder_name))
 print("Building")
 subprocess.run("hugo", shell=True, check=True)
 
+print("Commiting to repo")
+subprocess.run("git add .", shell=True, check=True)
+subprocess.run("git commit -m 'Blog Update'", shell=True, check=True)
+subprocess.run("git push", shell=True, check=True)
 
 print("Finished")
